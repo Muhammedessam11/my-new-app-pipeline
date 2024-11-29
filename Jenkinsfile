@@ -9,14 +9,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 dir('backend') {
-                    sh 'docker build -t mohamedessam1911/project-backend:latest .'
+                    sh 'docker build --no-cache -t mohamedessam1911/project-backend:latest .'
                 }
             }
         }
 	stage('Frontend') {
             steps {
                 dir('frontend') {
-                    sh 'docker build -t mohamedessam1911/project-frontend:latest .'
+                    sh 'docker build --no-cache -t mohamedessam1911/project-frontend:latest .'
                 }
             }
         }
